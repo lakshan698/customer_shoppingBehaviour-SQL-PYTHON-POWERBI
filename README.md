@@ -31,12 +31,6 @@ The raw data (`customer_shopping_behavior.csv`) was processed using Pandas. Key 
     * `purchase_frequency_days`: Mapped categorical frequency text (e.g., "Fortnightly") to numeric day values (e.g., 14).
 * **Data Validation:** Verified consistency between `discount_applied` and `promo_code_used`, removing redundant columns.
 
-## 💾 Database Integration
+## 💾 PowerBI-Dashboard
+<img width="1380" height="757" alt="image" src="https://github.com/user-attachments/assets/724e6e71-279a-4e6a-a684-2a142a29de7d" />
 
-Data was loaded into MS SQL Server using `SQLAlchemy` with a trusted connection.
-
-```python
-# Sample Connection Snippet
-connection_string = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};Trusted_Connection=yes;"
-engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
-df.to_sql("customer", engine, if_exists="replace", index=False)
